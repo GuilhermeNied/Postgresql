@@ -1,0 +1,1 @@
+with recursive recommendeds(memid) as ( select memid from cd.members where recommendedby = 1 union all select memb.memid from recommendeds rec inner join cd.members memb on memb.recommendedby = rec.memid ) select rec.memid, memb.firstname, memb.surname from recommendeds rec inner join cd.members memb on rec.memid = memb.memid order by memid
