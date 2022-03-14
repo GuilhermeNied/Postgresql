@@ -1,1 +1,1 @@
-select distinct surname from cd.members order by surname limit 10
+SELECT fac.name, SUM(slots * CASE WHEN memid = 0 THEN fac.guestcost ELSE membercost end) AS rev from cd.bookings bk inner join cd.facilities fac on bk.facid = fac.facid GROUP BY name ORDER BY rev

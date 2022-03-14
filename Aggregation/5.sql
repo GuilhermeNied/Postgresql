@@ -1,1 +1,1 @@
-select * from cd.facilities where name like '%Tennis%’
+SELECT facid, SUM(slots) FROM cd.bookings WHERE starttime >= '2012-09-01' AND starttime < '2012-10-1'GROUP BY facid ORDER BY SUM(slots)

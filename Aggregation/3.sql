@@ -1,1 +1,1 @@
-select * from cd.facilities where membercost > 0
+SELECT recommendedby, count(*) FROM cd.members WHERE recommendedby IS NOT NULL group by recommendedby ORDER BY recommendedby

@@ -1,0 +1,2 @@
+SELECT name, rank from ( select fac.name as name, rank() over (order by sum(case when memid = 0 then slots * fac.guestcost else slots * membercost end) desc) as rank from cd.bookings bk
+inner join cd.facilities fac on bk.facid = fac.facid group by fac.name ) as sub where rank <= 3 order by rank

@@ -1,1 +1,1 @@
-SELECT * FROM cd.facilities
+SELECT count(*) FROM cd.facilities

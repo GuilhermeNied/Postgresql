@@ -1,1 +1,1 @@
-select max(joindate)as latest from cd.members
+SELECT facid, SUM(slots) from cd.bookings GROUP BY facid ORDER BY SUM(slots) desc LIMIT 1

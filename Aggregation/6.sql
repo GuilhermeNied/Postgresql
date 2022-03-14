@@ -1,1 +1,1 @@
-select * from cd.facilities where facid in (1,5)
+SELECT facid, EXTRACT(month FROM starttime) AS month, SUM(slots) FROM cd.bookings WHERE extract(year FROM starttime) = 2012 GROUP BY facid, month ORDER BY facid, month;

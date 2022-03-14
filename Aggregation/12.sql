@@ -1,1 +1,1 @@
-select firstname, surname, joindate from cd.members where joindate = (select max(joindate) from cd.members)
+SELECT facid, extract(month from starttime) as month, SUM(slots) from cd.bookings WHERE starttime >= '2012-01-01' and starttime < '2013-01-01' GROUP BY rollup(facid, month) order by facid, month

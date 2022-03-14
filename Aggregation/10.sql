@@ -1,1 +1,1 @@
- select surname from cd.members union select name from cd.facilities
+SELECT name, rev from (select fac.name, SUM(CASE WHEN memid = 0 THEN slots * fac.guestcost ELSE slots * membercost END) as rev FROM cd.bookings bk inner join cd.facilities fac on bk.facid = fac.facid GROUP BY fac.name) AS agg WHERE rev < 1000 ORDER BY rev
