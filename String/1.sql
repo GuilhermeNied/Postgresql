@@ -1,0 +1,1 @@
+SELECT surname || ', ' || firstname from cd.members
