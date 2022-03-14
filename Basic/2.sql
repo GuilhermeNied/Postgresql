@@ -1,0 +1,1 @@
+Select  name , membercost from cd.facilities
